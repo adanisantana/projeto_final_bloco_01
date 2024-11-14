@@ -3,6 +3,7 @@ import java.io.IOException;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 import ecommerce.controller.EcommerceController;
+import ecommerce.model.Produto;
 
 public class Menu {
 
@@ -47,10 +48,24 @@ public class Menu {
 			switch(opcao) {
 			case 1: 
 				System.out.println("Criar conta");
+				
+				System.out.println("Digite seu nome:");
+				String nomeCliente = leia.nextLine();
+				
+				System.out.println("Digite o cep");
+				int cep = leia.nextInt();
+				
 				keyPress();
 				break;
 			case 2:
 				System.out.println("Adicionar produto");
+				System.out.println("Digite o produto");
+				String compra = leia.nextLine();
+				System.out.println("Digite quantidade");
+			    int quantidade = leia.nextInt();
+			    
+			    
+			    
 				keyPress();
 				break;
 			case 3:
@@ -59,6 +74,7 @@ public class Menu {
 				break;
 			case 4:
 				System.out.println("Calcular produto");
+				ecommerce.calcularTotal();
 				keyPress();
 				break;
 			case 5:

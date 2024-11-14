@@ -6,7 +6,7 @@ public interface carrinhoRepository  {
 		//Crud do carrinho
 		public void adicionarProduto(Produto produto);
 		public void removerProduto(String nomeProduto);
-		public void listarTodosProdutos(int quantidade, String nomeProduto, float precoTotal);
+		public void listarTodosProdutos();
 		
 		
 		// Método Total da Compra

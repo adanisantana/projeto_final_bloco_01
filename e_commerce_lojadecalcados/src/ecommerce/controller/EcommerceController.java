@@ -10,33 +10,50 @@ public class EcommerceController implements carrinhoRepository{
 	
 	private ArrayList<Produto> listarProdutos = new ArrayList<Produto>();
 	int numero = 0;
+	
+	public Produto buscarProdutos(String nomeProduto) {
+		for(var produto: listarProdutos) {
+			if(produto.getNomeProduto() == nomeProduto) {
+				return produto;
+			}
+			
+		}
+		return null;
+	}
 
 	@Override
 	public void adicionarProduto(Produto produto) {
 		listarProdutos.add(produto);
-		System.out.println("Produto" + produto);
-		
 		
 	}
 
 	@Override
 	public void removerProduto(String nomeProduto) {
-		// TODO Auto-generated method stub
+		if (nomeProduto != null) {
+			if(listarProdutos.remove(nomeProduto) == true)
+				System.out.println("\nA Produto: " + nomeProduto + " foi deletado com sucesso!");
+		}else
+			System.out.println("\nA Produto " + nomeProduto + " não foi encontrada!");
 		
 	}
 
-	@Override
-	public void listarTodosProdutos(int quantidade, String nomeProduto, float precoTotal) {
-		for(var produto: listarProdutos) {
-			System.out.println("Produto:" + produto,"Quantidade"+ quantidade,"Custo:", +precoTotal );
+	public void listarTodosProdutos(String produto) {
+		
+			
 		}
 		
-	}
+		
+	
 
 	@Override
 	public void calcularTotal() {
-		// TODO Auto-generated method stub
-		
+		float total = 0;
+		for (Produto produto : listarProdutos) {
+            total += produto.getPreco();
+ 
+        }
+
+	
 	}
 	
 
